@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6b3fa0">
+  <title>For Shreya Tai 💜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hearts" aria-hidden="true"></div>
+  <main id="app">
+    <section class="screen active" id="s0">
+      <div class="badge">A VERY IMPORTANT MESSAGE ✨</div>
+      <h1>Hey, Shreya Tai 👀</h1>
+      <p class="lead">Mohit & Maneet made something for you.</p>
+      <p class="tiny">⚠️ Contains sibling nonsense, roasting and one slightly emotional ending.</p>
+      <button class="primary" onclick="go(1)">Open it 💌</button>
+    </section>
+
+    <section class="screen" id="s1">
+      <div class="badge">ROUND 1 · NO CHEATING</div>
+      <h2>Who is the favourite child of Attey? 👀</h2>
+      <div class="choices">
+        <button onclick="wrong('Shreya')">Shreya Tai 👩</button>
+        <button onclick="correct('Mohit')">Mohit 😌</button>
+        <button onclick="correct('Maneet')">Maneet 😎</button>
+      </div>
+      <p id="reaction" class="reaction"></p>
+      <button id="next1" class="next hidden" onclick="go(2)">Okay okay, next →</button>
+    </section>
+
+    <section class="screen" id="s2">
+      <div class="badge">SCIENTIFIC INVESTIGATION 🧪</div>
+      <h2>How long does Shreya Tai take to get ready?</h2>
+      <div class="choices">
+        <button onclick="answer2()">10 minutes 🕐</button>
+        <button onclick="answer2()">30 minutes 🕑</button>
+        <button onclick="answer2()">1 hour 🕒</button>
+        <button onclick="answer2()">“We're leaving?” → 2 hours later 💀</button>
+      </div>
+      <p id="reaction2" class="reaction"></p>
+      <button id="next2" class="next hidden" onclick="go(3)">We have more evidence →</button>
+    </section>
+
+    <section class="screen" id="s3">
+      <div class="badge">THE AGE-TO-HEIGHT PARADOX</div>
+      <h2>She's our <span>older</span> sister…</h2>
+      <p class="lead">So why is she still so small? 🤏😂</p>
+      <div class="choices">
+        <button onclick="answer3()">Genetics 🧬</button>
+        <button onclick="answer3()">Magic ✨</button>
+        <button onclick="answer3()">Skill issue 💀</button>
+        <button onclick="answer3()">Secret Tai technology 🤫</button>
+      </div>
+      <p id="reaction3" class="reaction"></p>
+      <button id="next3" class="next hidden" onclick="go(4)">Enough roasting 😭 →</button>
+    </section>
+
+    <section class="screen" id="s4">
+      <div class="badge">THE CLASSIC FAMILY BATTLES</div>
+      <h2>Which one has caused the most drama? 😂</h2>
+      <div class="choices">
+        <button onclick="answer4('Money')">💰 Money</button>
+        <button onclick="answer4('Remote')">📺 TV remote</button>
+        <button onclick="answer4('Games')">🎮 Games</button>
+        <button onclick="answer4('Trips')">✈️ Trips</button>
+      </div>
+      <p id="reaction4" class="reaction"></p>
+      <button id="next4" class="next hidden" onclick="go(5)">One final question… →</button>
+    </section>
+
+    <section class="screen" id="s5">
+      <div class="badge">THE TAI HELPLINE ☎️</div>
+      <h2>Who do we call when life gets complicated?</h2>
+      <div class="choices">
+        <button onclick="answer5('Google')">Google 🤖</button>
+        <button onclick="answer5('Friends')">Friends 🧑‍🤝‍🧑</button>
+        <button onclick="answer5('Tai')">Shreya Tai — unofficial relationship counsellor™ ❤️</button>
+      </div>
+      <p id="reaction5" class="reaction"></p>
+      <button id="next5" class="next hidden" onclick="go(6)">Okay… serious mode now 🥹 →</button>
+    </section>
+
+    <section class="screen emotional" id="s6">
+      <div class="badge">JOKES ASIDE ❤️</div>
+      <div class="photo-card"><img src="images/photo3.jpg" alt="A memory with Shreya Tai and family"></div>
+      <h2>There's something we actually want to say.</h2>
+      <p>You've always been there for us when we have problems. You listen to us, you understand how we feel, and you guide us even when our problems are… well… <em>relationship related</em>. 😭😂</p>
+      <p>You're sweet, kind, caring, and somehow patient enough to deal with the two of us.</p>
+      <button class="primary" onclick="go(7)">There's more… ❤️</button>
+    </section>
+
+    <section class="screen gallery" id="s7">
+      <div class="badge">A FEW MEMORIES</div>
+      <h2>From the little idiots we were…</h2>
+      <div class="grid">
+        <img src="images/photo1.jpg" alt="Family selfie">
+        <img src="images/photo2.jpg" alt="Family memory">
+        <img src="images/photo4.jpg" alt="Family outdoors">
+        <img src="images/photo5.jpg" alt="Childhood family memory">
+        <img src="images/photo6.jpg" alt="Fun family memory">
+        <img src="images/photo3.jpg" alt="Family memory">
+      </div>
+      <p class="caption">Different years. Same chaos. Same Tai. 🫶🏻</p>
+      <button class="primary" onclick="go(8)">Open your gift 🎁</button>
+    </section>
+
+    <section class="screen gift" id="s8">
+      <div class="badge">YOUR RAKHI GIFT</div>
+      <div class="giftbox" onclick="openGift()" id="giftbox">🎁</div>
+      <h2 id="giftTitle">Tap the gift box.</h2>
+      <p id="giftText">It's something money can't buy.</p>
+      <button id="giftNext" class="primary hidden" onclick="go(9)">One last thing…</button>
+    </section>
+
+    <section class="screen final" id="s9">
+      <div class="confetti"></div>
+      <div class="final-photo"><img src="images/photo2.jpg" alt="Shreya Tai with family"></div>
+      <div class="badge">HAPPY RAKSHA BANDHAN 🌸</div>
+      <h1>Shreya Tai ❤️</h1>
+      <p class="message">We may fight over money, the TV remote, games and trips. We may annoy you, invade your personal space, and roast you for taking forever to get ready. 😂</p>
+      <p class="message">But honestly, we're really lucky to have you.</p>
+      <p class="message">Thank you for listening to us, supporting us when we have problems, caring about what we're feeling, and always being there when we need you.</p>
+      <p class="message strong">No matter how much we annoy each other, you'll always have us. ❤️</p>
+      <p class="signature">— Mohit & Maneet 🫶🏻</p>
+      <div class="music-note">🎵 And for the ending… <b>Tera Yaar Hoon Main</b> ❤️</div>
+      <div class="song-card">
+        <div class="song-title">🎵 Tera Yaar Hoon Main</div>
+        <div class="song-subtitle">Arijit Singh · Rochak Kohli · Kumaar</div>
+        <iframe
+          class="song-player"
+          src="https://www.youtube.com/embed/EatzcaVJRMs?rel=0&modestbranding=1"
+          title="Tera Yaar Hoon Main — T-Series"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen></iframe>
+        <a class="song-link" href="https://www.youtube.com/watch?v=EatzcaVJRMs" target="_blank" rel="noopener">
+          ▶ Open the song on YouTube
+        </a>
+      </div>
+      <button class="restart" onclick="go(0)">Replay from the beginning ↺</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
